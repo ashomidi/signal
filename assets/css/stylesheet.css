@@ -1,0 +1,16 @@
+body {
+  background-color: #101010;
+  color: #B4B4B4;
+  font-size: 0.875rem;
+}
+
+.gray_box_bg {
+  background-color: #1F2125;
+}
+
+.icon-flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
