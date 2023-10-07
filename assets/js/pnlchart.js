@@ -1,3 +1,5 @@
+const spinner = document.getElementById("chart-spinner");
+
 const chartOptions = {
     height: 200,
     layout: {
@@ -15,12 +17,14 @@ const chartOptions = {
 }
 
 const updateChartData = async () => {
+    spinner.classList.remove("hidden");
     const selectedTimeFrame = document.getElementById('timeFrameSelectForPnl').value;
     const totalPnlWrapper = document.getElementById('total_pnl_item');
 
     try {
         const response = await fetch(`https://master.soroosh.app/api/report/chart/master/godofweb3?format=json&report=PNL&time_frame=${selectedTimeFrame}`);
         const data = await response.json();
+        spinner.classList.add("hidden");
 
         totalPnlWrapper.innerHTML = data.total_pnl.toFixed(2);
 
